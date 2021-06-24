@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Stage 1: Execute') {
             steps {
-                echo 'Starting... Running ${BUILD_ID} on ${JENKINS_URL}'
+                echo 'Starting.. Running ${BUILD_ID} on ${JENKINS_URL}'
             }
         }
         stage('Stage 2: Build') {
