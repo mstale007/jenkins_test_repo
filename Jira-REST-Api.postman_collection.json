@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "25abcda9-b6f5-45cf-b7f9-fe274ed979a7",
+		"name": "Jira-REST-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get issue",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mstale20@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "HJlTRCPwbdG2xZmPHnxOAA2D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mstale-test.atlassian.net/rest/api/latest/issue/TEST-1",
+					"protocol": "https",
+					"host": [
+						"mstale-test",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"latest",
+						"issue",
+						"TEST-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mstale20@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "HJlTRCPwbdG2xZmPHnxOAA2D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n       \"project\":\r\n       {\r\n          \"key\": \"TEST\"\r\n       },\r\n       \"summary\": \"REST is fine!.\",\r\n       \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n       \"issuetype\": {\r\n          \"name\": \"Story\"\r\n       }\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "https://mstale-test.atlassian.net/rest/api/latest/issue/",
+					"protocol": "https",
+					"host": [
+						"mstale-test",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"latest",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create subtask",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mstale20@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "HJlTRCPwbdG2xZmPHnxOAA2D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\":\r\n    {\r\n        \"project\":\r\n        {\r\n            \"key\": \"TEST\"\r\n        },\r\n        \"parent\":\r\n        {\r\n            \"key\": \"TEST-3\"\r\n        },\r\n        \"summary\": \"Sub-task of TEST-101\",\r\n        \"description\": \"Don't forget to do this too REST.\",\r\n        \"issuetype\":\r\n        {\r\n            \"id\": \"6\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://mstale-test.atlassian.net/rest/api/latest/issue/",
+					"protocol": "https",
+					"host": [
+						"mstale-test",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"latest",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Subtask",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\" : {\r\n        \"jstats\":{ \"description\":\"build!\"}\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://mstale-test.atlassian.net/rest/api/latest/issue/TEST-3",
+					"protocol": "https",
+					"host": [
+						"mstale-test",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"latest",
+						"issue",
+						"TEST-3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "HJlTRCPwbdG2xZmPHnxOAA2D",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "mstale20@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
