@@ -2,30 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage 1: Execute') {
+        stage('Package to .jar') {
             steps {
                 echo 'Starting.. Running ${BUILD_ID} on ${JENKINS_URL}'
+                sh 'mvn package'
             }
         }
-        stage('Stage 2: Build') {
-            steps {
-                echo 'Building..'
-                echo 'Python Version: \n'
-               // sh 'python --version'
-            }
-        }
-        stage('Stage 3: Test') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
-                echo 'Java Version: \n'
-               // sh 'java -version'
+                sh 'mvn test'
             }
         }
-        stage('Stage 4: Release') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                echo 'GCC Version: \n'
-               // sh 'gcc --version'
+                sh 'mvn deploy'
             }
         }
     }
