@@ -11,21 +11,21 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo 'Python Version: \n'
-               // sh 'python --version'
+                sh 'python --version'
             }
         }
         stage('Stage 3: Test') {
             steps {
                 echo 'Testing..'
                 echo 'Java Version: \n'
-               // sh 'java -version'
+                sh 'java -version'
             }
         }
         stage('Stage 4: Release') {
             steps {
                 echo 'Deploying...'
                 echo 'GCC Version: \n'
-               // sh 'gcc --version'
+                sh 'gcc --version'
             }
         }
     }
