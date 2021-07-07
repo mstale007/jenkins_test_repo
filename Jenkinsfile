@@ -1,2 +1,2 @@
 @Library('sharedJenkinsLibraries') _ 
-genericJenkinsFile(buildMode: "gradle", jira_issue: "CICD-13")
+genericJenkinsFile(buildMode: "changing for test", jira_issue: "CICD-13")
