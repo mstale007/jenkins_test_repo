@@ -1,2 +1,2 @@
 @Library('sharedJenkinsLibraries') _ 
-genericJenkinsFile(buildMode: "gradle", jira_issue_key: "CICD")
+genericJenkinsFile(buildMode: "mvn", jira_issue_key: "CICD")
